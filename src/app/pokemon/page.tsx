@@ -1,3 +1,5 @@
+"use client"
+
 import { fetchPokemon } from "@/lib/pokemon/api";
 import { Pokemon } from "@/types/pokemon";
 import { useState, useEffect } from "react";
