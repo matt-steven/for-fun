@@ -37,25 +37,25 @@ export default function MovieResults({
 
   if (searchTerm)
     return (
-      <div>
-        <table style={{ border: "2px solid blue" }}>
+      <div className="max-w-lg rounded overflow-hidden shadow-md">
+        <table className="table-auto border border-collapse border-gray-200">
           <thead>
             <tr>
-              <th style={{ fontWeight: "bold" }}>Name</th>
-              <th style={{ fontWeight: "bold" }}>Overview</th>
-              <th style={{ fontWeight: "bold" }}>Favourite?</th>
+              <th className="border-b font-bold">Name</th>
+              <th className="border-b font-bold">Overview</th>
+              <th className="border-b font-bold">Favourite?</th>
             </tr>
           </thead>
           <tbody>
             {results.map((movie) => (
               <tr key={movie.id}>
-                <td style={{ borderBottom: "2px solid blue" }}>
+                <td className="border-b">
                   <Link href={`/movies/${movie.id}/`}>{movie.title}</Link>
                 </td>
-                <td style={{ borderBottom: "2px solid blue" }}>
+                <td className="border-b">
                   {movie.overview}
                 </td>
-                <td style={{ borderBottom: "2px solid blue" }}>
+                <td className="border-b">
                   <button onClick={() => clickFavourite(movie.id)}>
                     {favourites.includes(movie.id)
                       ? "Remove from Favourites"
@@ -66,11 +66,13 @@ export default function MovieResults({
             ))}
           </tbody>
         </table>
-        <Pagination
-          page={page}
-          setPage={setPage}
-          hasNext={results.length === 20}
-        />
+        <div className="container mx-auto inline-flex items-center justify-items-center">
+          <Pagination
+            page={page}
+            setPage={setPage}
+            hasNext={results.length === 20}
+          />
+        </div>
       </div>
     );
 }

@@ -4,7 +4,7 @@ import { fetchPokemon } from "@/lib/pokemon/api";
 import { Pokemon } from "@/types/pokemon";
 import { useState, useEffect } from "react";
 
-export default function Pokemons() {
+export default function PokemonPage() {
   const [pokemon, setPokemon] = useState<Pokemon[]>([]);
   const [page, setPage] = useState<number>(1);
   const [totalPages, setTotalPages] = useState<number>(1);

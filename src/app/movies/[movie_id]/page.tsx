@@ -13,7 +13,7 @@ interface PageProps {
   }>;
 }
 
-export default function MovieDetail({ params }: PageProps) {
+export default function MovieDetailPage({ params }: PageProps) {
   const [movieDetails, setMovieDetails] = useState<MovieDetails | null>(null);
   const resolvedParams = React.use(params);
 

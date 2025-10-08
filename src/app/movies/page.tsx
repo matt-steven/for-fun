@@ -5,7 +5,7 @@ import MovieResults from "./MovieResults";
 import { useEffect, useState } from "react";
 import { fetchFavourites, sendFavourite } from "@/lib/movie/api";
 
-export default function Home() {
+export default function MoviesPage() {
   const [favourites, setFavourites] = useState<number[]>([]);
   const [search, setSearch] = useState<string>("");
 
